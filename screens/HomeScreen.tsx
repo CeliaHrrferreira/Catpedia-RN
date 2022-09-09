@@ -70,7 +70,6 @@ export default class HomeScreen extends Component<CatListProps, BreedListState> 
     };
 
     onBreedPressed(breed: Breed): void {
-        console.log("pulsado: ", breed.id);
         this.props.navigation.navigate('catDetails', {breed: breed});
     }
 
