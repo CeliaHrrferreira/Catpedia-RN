@@ -29,7 +29,7 @@ export default class BreedCard extends Component<BreedCardProps> {
                         <Image
                             style={styles.imageDefault}
                             resizeMode="contain"
-                            source={require('../resources/cat.png')}
+                            source={require('../assets/images/cat.png')}
                         />
                     }
 
@@ -42,12 +42,12 @@ export default class BreedCard extends Component<BreedCardProps> {
                             <Image
                                 style={styles.icon}
                                 resizeMode="contain"
-                                source={require('../resources/full_heart.png')} />
+                                source={require('../assets/images/full_heart.png')} />
                             :
                             <Image
                                 style={styles.icon}
                                 resizeMode="contain"
-                                source={require('../resources/empty_heart.png')} />}
+                                source={require('../assets/images/empty_heart.png')} />}
                             </TouchableHighlight>
                     </View>
                 </View>
