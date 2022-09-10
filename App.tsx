@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import { CatDetails } from './screens/CatDetails';
-import FavList from './screens/FavList';
+import AccountScreen from './screens/AccountScreen';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -47,7 +47,7 @@ export default class App extends Component<AppProps, AppState> {
             // ),
           }}
         />
-        <Tab.Screen name="favList" component={FavList} />
+        <Tab.Screen name="Catpedia" component={AccountScreen} />
       </Tab.Navigator>
     );
   }

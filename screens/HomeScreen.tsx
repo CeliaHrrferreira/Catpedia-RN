@@ -62,21 +62,13 @@ export default class HomeScreen extends Component<CatListProps, BreedListState> 
             <BreedCard
                 name={breed.name}
                 imageURI={breed.image?.url}
-                fav={false}
                 onPress={this.onBreedPressed.bind(this, breed)}
-                onPressFav={this.onFavPressed.bind(this, breed)}
             />
         );
     };
 
     onBreedPressed(breed: Breed): void {
         this.props.navigation.navigate('catDetails', {breed: breed});
-    }
-
-    onFavPressed(breed: Breed): void {
-        console.log("pulsado fav: ", breed.id);
-        // TODO
-        // this.props.navigation.navigate('breedDetail', {breed: breed});
     }
 }
 

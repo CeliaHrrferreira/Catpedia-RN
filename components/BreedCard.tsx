@@ -3,10 +3,8 @@ import { Dimensions, Image, StyleSheet, Text, TouchableHighlight, View } from 'r
 
 interface BreedCardProps {
     readonly onPress: () => void;
-    readonly onPressFav: () => void;
     readonly imageURI?: string;
     readonly name: string;
-    readonly fav: boolean;
 }
 
 let screenWidth: number = Dimensions.get('window').width;
@@ -35,20 +33,6 @@ export default class BreedCard extends Component<BreedCardProps> {
 
                     <View style={styles.nameContainer}>
                         <Text style={styles.text}>{this.props.name}</Text>
-                        <TouchableHighlight
-                        underlayColor="white"
-                        onPress={this.props.onPressFav}>
-                        {this.props.fav ?
-                            <Image
-                                style={styles.icon}
-                                resizeMode="contain"
-                                source={require('../assets/images/full_heart.png')} />
-                            :
-                            <Image
-                                style={styles.icon}
-                                resizeMode="contain"
-                                source={require('../assets/images/empty_heart.png')} />}
-                            </TouchableHighlight>
                     </View>
                 </View>
             </TouchableHighlight>
@@ -93,9 +77,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 18,
         color: 'white'
-    },
-    icon: {
-        width: 25,
-        height: 25
     }
 });

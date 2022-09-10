@@ -13,7 +13,6 @@ import {
 } from 'react-native'
 import React, { Component } from 'react'
 import CatApiClient, { Breed, BreedDetail } from '../api/CatApiClient';
-import { Rating } from 'react-native-ratings';
 import BreedCharacteristic from '../components/BreedCharacteristic';
 
 
@@ -184,12 +183,6 @@ const styles = StyleSheet.create({
     width: screenWidth,
     position: 'absolute',
     top: 0,
-  },
-  gradient: {
-    height: screenHeight * 0.7,
-    width: screenWidth,
-    position: 'absolute',
-    top: 0
   },
   breedName: {
     fontSize: 30,

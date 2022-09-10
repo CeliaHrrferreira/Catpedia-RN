@@ -59,7 +59,12 @@ export interface BreedDetail {
     width: number;
     height: number;
 }
-
+export interface RandomItem {
+  id: string;
+  url: string;
+  width: number;
+  height: number;
+}
 export default class CatApiClient {
     static API_KEY = 'cd7828b3-f9d5-41ac-8008-ecf17b046d82';
     static BASE_URL = 'https://api.thecatapi.com/v1/';
@@ -78,5 +83,10 @@ export default class CatApiClient {
         return responseJson;
     }
 
+    async getRandomCat(url: string): Promise<RandomItem[]> {
+        const response: Response = await fetch(url);
+        const responseJson: RandomItem[] = await response.json();
+        return responseJson;
+    }
 
 }
