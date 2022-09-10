@@ -1,4 +1,4 @@
-import { Alert, Button, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
+import { Alert, Button, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { getAuth, createUserWithEmailAndPassword, User, signInWithEmailAndPassword, Auth } from 'firebase/auth';
@@ -41,6 +41,8 @@ const LoginScreen = () => {
     return (
         isSinginScreen ?
             <SafeAreaView style={styles.container}>
+                <Text style={styles.title}>Catpedia</Text>
+                <Image style={styles.logo} source={require('../assets/images/cat_edit.png')} />
                 <View style={styles.inputContainer}>
                     <TextInput
                         style={styles.inputStyle}
@@ -70,11 +72,16 @@ const LoginScreen = () => {
                                 REGISTER
                             </Text>
                         </TouchableOpacity>
+                        <Text style={styles.loginText} onPress={() => setSigninScreen(false)}>
+                            Do you have an account? Click here to singin
+                        </Text>
                     </View>
                 </View>
             </SafeAreaView>
             :
             <SafeAreaView style={styles.container}>
+                <Text style={styles.title}>Catpedia</Text>
+                <Image style={styles.logo} source={require('../assets/images/cat.png')} />
                 <View style={styles.inputContainer}>
                     <TextInput
                         style={styles.inputStyle}
@@ -150,4 +157,17 @@ const styles = StyleSheet.create({
         marginTop: 25,
         textAlign: 'center'
     },
+    title: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginBottom: 20,
+        textAlign: 'center',
+        color: '#771B03'
+    },
+    logo: {
+        alignContent: 'center',
+        width: 190,
+        height: 180,
+        marginBottom: 20
+    }
 })

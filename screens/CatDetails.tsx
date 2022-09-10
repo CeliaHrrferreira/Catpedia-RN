@@ -105,7 +105,7 @@ export class CatDetails extends Component<CatDetailsProps, CatDetailsState> {
             keyExtractor={(item) => item.id}
             renderItem={this.renderDetail}
           ></Animated.FlatList>
-          <View>
+          <View style={styles.details}>
             <Text style={styles.breedName}>{breed.name}</Text>
             <Text style={styles.breedDescription}>{breed.description}</Text>
             <Text style={styles.breedOrigin}>Origin: {breed.origin}</Text>
@@ -227,5 +227,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     backgroundColor: '#DD39AF',
     color: 'white',
+  },
+  details: {
+    marginBottom: 20
   }
 });
