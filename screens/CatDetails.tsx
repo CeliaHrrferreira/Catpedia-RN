@@ -73,13 +73,7 @@ export class CatDetails extends Component<CatDetailsProps, CatDetailsState> {
             outputRange
           });
           return (
-            <Animated.Image style={{
-              height: screenHeight * 0.5,
-              width: screenWidth,
-              position: 'absolute',
-              top: 0,
-              opacity: opacity
-            }} source={{ uri: item.url }} key={index} />
+            <Animated.Image style={[styles.imgBackdrop, { opacity: opacity }]} source={{ uri: item.url }} key={index} />
           )
         })}
       </View>
@@ -124,18 +118,7 @@ export class CatDetails extends Component<CatDetailsProps, CatDetailsState> {
     });
 
     return (
-      <Animated.View
-        style={{
-          width: constantWidth,
-          height: 260,
-          marginHorizontal: 20,
-          borderRadius: 20,
-          padding: 20,
-          backgroundColor: '#CD8759',
-          alignItems: 'center',
-          transform: [{ translateY }]
-        }}
-      >
+      <Animated.View style={[styles.container, { transform: [{ translateY }] }]}>
         <Image style={styles.image} resizeMode="contain"
           source={{ uri: cardInfo.item.url }} />
       </Animated.View>
@@ -146,6 +129,15 @@ export class CatDetails extends Component<CatDetailsProps, CatDetailsState> {
 export default CatDetails
 
 const styles = StyleSheet.create({
+  container: {
+    width: constantWidth - 15,
+    height: 260,
+    marginHorizontal: 20,
+    borderRadius: 20,
+    padding: 20,
+    backgroundColor: '#CD8759',
+    alignItems: 'center',
+  },
   image: {
     flex: 1,
     width: '100%',
@@ -159,6 +151,12 @@ const styles = StyleSheet.create({
   },
   backdrop: {
     height: screenHeight * 0.7,
+    width: screenWidth,
+    position: 'absolute',
+    top: 0,
+  },
+  imgBackdrop: {
+    height: screenHeight * 0.5,
     width: screenWidth,
     position: 'absolute',
     top: 0,
