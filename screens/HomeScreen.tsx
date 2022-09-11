@@ -2,6 +2,7 @@ import { FlatList, ListRenderItemInfo, StyleSheet, View } from 'react-native'
 import React, { Component } from 'react'
 import CatApiClient, { Breed } from '../api/CatApiClient'
 import BreedCard from '../components/BreedCard';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface BreedItem {
     readonly id: string;
@@ -19,38 +20,35 @@ interface BreedListState {
 export default class HomeScreen extends Component<CatListProps, BreedListState> {
 
     protected apiClient: CatApiClient;
-    public loading: boolean;
 
     constructor(props: CatListProps) {
         super(props);
         this.state = { breeds: [] }
         this.apiClient = new CatApiClient();
-        this.loading = false;
     }
 
     componentDidMount(): void {
-        this.loading = true;
         let breedList: BreedItem[] = new Array<BreedItem>();
         this.apiClient.getCatsBreeds().then(breeds => {
             breedList = breeds.map(breed => {
                 return { id: breed.id, breed: breed }
             })
             this.setState({ breeds: breedList });
-            this.loading = false;
         }).catch(error => {
-            console.log("error", error)
-            this.loading = false;
+            console.log("error", error);
         })
     }
 
     render() {
         return (
-            <View >
-                <FlatList<BreedItem>
-                    data={this.state.breeds}
-                    renderItem={this.renderCard}
-                />
-            </View>
+            <SafeAreaView>
+                <View >
+                    <FlatList<BreedItem>
+                        data={this.state.breeds}
+                        renderItem={this.renderCard}
+                    />
+                </View>
+            </SafeAreaView>
         )
     }
 
@@ -68,7 +66,7 @@ export default class HomeScreen extends Component<CatListProps, BreedListState> 
     };
 
     onBreedPressed(breed: Breed): void {
-        this.props.navigation.navigate('catDetails', {breed: breed});
+        this.props.navigation.navigate('catDetails', { breed: breed });
     }
 }
 
