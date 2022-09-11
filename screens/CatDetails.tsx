@@ -154,7 +154,7 @@ export default CatDetails
 const styles = StyleSheet.create({
   container: {
     width: constantWidth - 20,
-    height: 260,
+    height: 245,
     marginHorizontal: 20,
     borderRadius: 20,
     padding: 20,
