@@ -12,23 +12,10 @@ const Tab = createBottomTabNavigator();
 
 interface AppProps { }
 
-interface AppState {
-  readonly ready: boolean;
-}
-
-export default class App extends Component<AppProps, AppState> {
-
-  private catListStack!: () => any;
-  private catFavoritesStack!: () => any;
-  private mainTabs!: () => any;
-  private navigationContainer!: () => any;
+export default class App extends Component<AppProps> {
 
   constructor(props: AppProps) {
     super(props);
-
-    this.state = {
-      ready: false,
-    };
   }
 
   componentDidMount(): void {
@@ -38,7 +25,7 @@ export default class App extends Component<AppProps, AppState> {
   CreateMainNavigation(): JSX.Element {
     return (
       <Tab.Navigator>
-        <Tab.Screen name="catList" component={HomeScreen}
+        <Tab.Screen name="Cats" component={HomeScreen}
           options={{
             headerShown: false,
             // TO DO THE FUCKING ICON

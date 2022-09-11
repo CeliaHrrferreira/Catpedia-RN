@@ -4,7 +4,7 @@ import CatApiClient, { RandomItem } from '../api/CatApiClient';
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase-config';
 import { Auth, getAuth } from '@firebase/auth';
-import { useNavigation } from '@react-navigation/core';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 interface AccountProps {
@@ -72,6 +72,7 @@ export default class AccountScreen extends Component<AccountProps, AccountState>
   }
   handleLogout() {
     auth.signOut().then(() => {
+      AsyncStorage.removeItem('userData');
       this.props.navigation.navigate('Login');
     }).catch(error =>
       console.log(error));
