@@ -1,4 +1,4 @@
-import { Image, Text, View, NativeModules, Button, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native'
+import { Image, Text, View, NativeModules, Button, SafeAreaView, StyleSheet, TouchableOpacity, Alert } from 'react-native'
 import React, { Component } from 'react'
 import CatApiClient, { RandomItem } from '../api/CatApiClient';
 import { FirebaseApp, initializeApp } from 'firebase/app';
@@ -62,10 +62,9 @@ export default class AccountScreen extends Component<AccountProps, AccountState>
         return;
       } else {
         this.apiClient.getRandomCat(result).then(cat => {
-          console.log(cat);
           this.setState({ randomCat: cat });
         }).catch(error => {
-          console.log("error", error)
+          Alert.alert(error.message);
         });
       }
     });
@@ -75,7 +74,7 @@ export default class AccountScreen extends Component<AccountProps, AccountState>
       AsyncStorage.removeItem('userData');
       this.props.navigation.navigate('Login');
     }).catch(error =>
-      console.log(error));
+      Alert.alert(error.message));
   }
 }
 

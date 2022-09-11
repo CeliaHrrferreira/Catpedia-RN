@@ -77,7 +77,7 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
         try {
             await AsyncStorage.setItem('userData', JSON.stringify(user));
         } catch (error) {
-            console.log("Something went wrong", error);
+            Alert.alert('Something went wrong');
         }
     }
 
@@ -90,7 +90,7 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
                 }
             });
         } catch (error) {
-            console.log("Something went wrong", error);
+            Alert.alert('Something went wrong');
         }
     }
 

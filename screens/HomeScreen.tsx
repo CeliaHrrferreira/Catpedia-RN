@@ -1,4 +1,4 @@
-import { FlatList, ListRenderItemInfo, StyleSheet, View } from 'react-native'
+import { Alert, FlatList, ListRenderItemInfo, StyleSheet, View } from 'react-native'
 import React, { Component } from 'react'
 import CatApiClient, { Breed } from '../api/CatApiClient'
 import BreedCard from '../components/BreedCard';
@@ -35,7 +35,7 @@ export default class HomeScreen extends Component<CatListProps, BreedListState> 
             })
             this.setState({ breeds: breedList });
         }).catch(error => {
-            console.log("error", error);
+            Alert.alert(error.message);
         })
     }
 
