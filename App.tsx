@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import { CatDetails } from './screens/CatDetails';
 import AccountScreen from './screens/AccountScreen';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -28,13 +29,17 @@ export default class App extends Component<AppProps> {
         <Tab.Screen name="Cats" component={HomeScreen}
           options={{
             headerShown: false,
-            // TO DO THE FUCKING ICON
-            // tabBarIcon: ({color, size}) => (
-            //   <Icon name="list" size={size} color={color} />
-            // ),
+            tabBarIcon: ({color, size}) => (
+              <Icon name="md-layers" size={size} color={color} />
+            ),
           }}
         />
-        <Tab.Screen name="Catpedia" component={AccountScreen} />
+        <Tab.Screen name="Catpedia" component={AccountScreen} 
+        options={{
+          tabBarIcon: ({color, size}) => (
+            <Icon name="logo-octocat" size={size} color={color} />
+          )
+        }}/>
       </Tab.Navigator>
     );
   }
