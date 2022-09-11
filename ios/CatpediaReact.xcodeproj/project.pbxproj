@@ -11,6 +11,8 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2D6D755328CD59470026F567 /* GetGifManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D755228CD59470026F567 /* GetGifManager.m */; };
+		2D6D755428CD59470026F567 /* GetGifManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D755228CD59470026F567 /* GetGifManager.m */; };
 		34F13E463312C2077929BFD3 /* libPods-CatpediaReact-CatpediaReactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E00E1D2222AA1E52BCA15B9 /* libPods-CatpediaReact-CatpediaReactTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8FA937AE5CA9FFD373FCF2A7 /* libPods-CatpediaReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E941B1E928CE45E6310F4F68 /* libPods-CatpediaReact.a */; };
@@ -37,6 +39,8 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = CatpediaReact/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CatpediaReact/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CatpediaReact/main.m; sourceTree = "<group>"; };
+		2D6D754E28CD58410026F567 /* GetGifManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetGifManager.h; sourceTree = "<group>"; };
+		2D6D755228CD59470026F567 /* GetGifManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetGifManager.m; sourceTree = "<group>"; };
 		2E00E1D2222AA1E52BCA15B9 /* libPods-CatpediaReact-CatpediaReactTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CatpediaReact-CatpediaReactTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CatpediaReact/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFE039A98C16BFC380374E89 /* Pods-CatpediaReact-CatpediaReactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatpediaReact-CatpediaReactTests.debug.xcconfig"; path = "Target Support Files/Pods-CatpediaReact-CatpediaReactTests/Pods-CatpediaReact-CatpediaReactTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2D6D754E28CD58410026F567 /* GetGifManager.h */,
+				2D6D755228CD59470026F567 /* GetGifManager.m */,
 				13B07FAE1A68108700A75B9A /* CatpediaReact */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* CatpediaReactTests */,
@@ -419,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00E356F31AD99517003FC87E /* CatpediaReactTests.m in Sources */,
+				2D6D755428CD59470026F567 /* GetGifManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +435,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				2D6D755328CD59470026F567 /* GetGifManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
