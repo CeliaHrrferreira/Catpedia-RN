@@ -12,6 +12,7 @@ import com.facebook.soloader.SoLoader;
 import com.catpediareact.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,6 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           packages.add(new GetGifPackageModule());
+          packages.add(new ReactNativeLocalizationPackage());
           return packages;
         }
 

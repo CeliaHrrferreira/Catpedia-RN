@@ -13,6 +13,7 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2D6D755328CD59470026F567 /* GetGifManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D755228CD59470026F567 /* GetGifManager.m */; };
 		2D6D755428CD59470026F567 /* GetGifManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D6D755228CD59470026F567 /* GetGifManager.m */; };
+		2D85BEB228CE290300A89EB9 /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D85BEB128CE290300A89EB9 /* libRNI18n.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B092945DB88C54D5A9A3B43E /* libPods-CatpediaReact-CatpediaReactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F617A295165A23294CE9F2 /* libPods-CatpediaReact-CatpediaReactTests.a */; };
 		C4C5384268F91E6F938FBAB9 /* libPods-CatpediaReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0933C61C3B6EEB043A19FCEB /* libPods-CatpediaReact.a */; };
@@ -43,6 +44,7 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = CatpediaReact/main.m; sourceTree = "<group>"; };
 		2D6D754E28CD58410026F567 /* GetGifManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetGifManager.h; sourceTree = "<group>"; };
 		2D6D755228CD59470026F567 /* GetGifManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetGifManager.m; sourceTree = "<group>"; };
+		2D85BEB128CE290300A89EB9 /* libRNI18n.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libRNI18n.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6EE5F37A99A9D1FF36BB30E3 /* Pods-CatpediaReact-CatpediaReactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatpediaReact-CatpediaReactTests.release.xcconfig"; path = "Target Support Files/Pods-CatpediaReact-CatpediaReactTests/Pods-CatpediaReact-CatpediaReactTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = CatpediaReact/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99E529DF2FEA823DBDBD2F2C /* Pods-CatpediaReact-CatpediaReactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatpediaReact-CatpediaReactTests.debug.xcconfig"; path = "Target Support Files/Pods-CatpediaReact-CatpediaReactTests/Pods-CatpediaReact-CatpediaReactTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D85BEB228CE290300A89EB9 /* libRNI18n.a in Frameworks */,
 				C4C5384268F91E6F938FBAB9 /* libPods-CatpediaReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -103,6 +106,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2D85BEB128CE290300A89EB9 /* libRNI18n.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				0933C61C3B6EEB043A19FCEB /* libPods-CatpediaReact.a */,
 				08F617A295165A23294CE9F2 /* libPods-CatpediaReact-CatpediaReactTests.a */,
@@ -225,6 +229,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 83CBB9F61A601CBA00E9B192;
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;

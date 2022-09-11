@@ -5,6 +5,7 @@ import { getAuth, createUserWithEmailAndPassword, User, signInWithEmailAndPasswo
 import { FirebaseApp, initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase-config';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import I18n from 'react-native-i18n';
 
 interface LoginScreenProps {
     readonly navigation: any;
@@ -77,7 +78,7 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
         try {
             await AsyncStorage.setItem('userData', JSON.stringify(user));
         } catch (error) {
-            Alert.alert('Something went wrong');
+            Alert.alert(I18n.t('somethingWentWrong'));
         }
     }
 
@@ -90,7 +91,7 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
                 }
             });
         } catch (error) {
-            Alert.alert('Something went wrong');
+            Alert.alert(I18n.t('somethingWentWrong'));
         }
     }
 
@@ -107,7 +108,7 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
                             autoCorrect={false}
                             autoCapitalize='none'
                             onChangeText={this.handleEmail}
-                            placeholder='Enter Email'>
+                            placeholder={I18n.t('enterEmail')}>
                         </TextInput>
                         <TextInput
                             style={styles.inputStyle}
@@ -115,7 +116,7 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
                             autoCorrect={false}
                             autoCapitalize='none'
                             onChangeText={this.handlePassword}
-                            placeholder='Enter Password'
+                            placeholder={I18n.t('enterPassword')}
                             secureTextEntry={true}>
                         </TextInput>
                         <View style={styles.buttonContainer}>
@@ -124,11 +125,11 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
                                 onPress={() => this.handleCreateUserAccount(this.state.email, this.state.password)}
                             >
                                 <Text>
-                                    REGISTER
+                                    {I18n.t('register').toUpperCase()}
                                 </Text>
                             </TouchableOpacity>
                             <Text style={styles.loginText} onPress={() => this.handleScreen(false)}>
-                                Do you have an account? Click here to singin
+                                {I18n.t('haveAccount')}
                             </Text>
                         </View>
                     </View>
@@ -144,7 +145,7 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
                             autoCorrect={false}
                             autoCapitalize='none'
                             onChangeText={this.handleEmail}
-                            placeholder='Enter Email'>
+                            placeholder={I18n.t('enterEmail')}>
                         </TextInput>
                         <TextInput
                             style={styles.inputStyle}
@@ -152,17 +153,17 @@ export default class LoginScreen extends Component<LoginScreenProps, LoginScreen
                             autoCorrect={false}
                             autoCapitalize='none'
                             onChangeText={this.handlePassword}
-                            placeholder='Enter Password'
+                            placeholder={I18n.t('enterPassword')}
                             secureTextEntry={true}>
                         </TextInput>
                         <View style={styles.buttonContainer}>
                             <Button
                                 color='#EB26FF'
-                                title="Login"
+                                title={I18n.t('login')}
                                 onPress={() => this.handleSignin(this.state.email, this.state.password)}
                             />
                             <Text style={styles.loginText} onPress={() => this.handleScreen(true)}>
-                                Don't have account? Click here to signup
+                                {I18n.t('noAccount')}
                             </Text>
                         </View>
                     </View>

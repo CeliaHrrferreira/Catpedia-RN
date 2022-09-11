@@ -5,7 +5,7 @@ import { FirebaseApp, initializeApp } from 'firebase/app';
 import { firebaseConfig } from '../firebase-config';
 import { Auth, getAuth } from '@firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import I18n from 'react-native-i18n';
 
 interface AccountProps {
   readonly navigation: any;
@@ -33,7 +33,7 @@ export default class AccountScreen extends Component<AccountProps, AccountState>
         <TouchableOpacity
         style={styles.button}
           onPress={this.onPress.bind(this, 'jpg,png')}>
-          <Text style={styles.textButton}>Get a random image of cats!</Text>
+          <Text style={styles.textButton}>{I18n.t('randomImage')}</Text>
           </TouchableOpacity>
         <View style={styles.imgContainer}>
           {this.state?.randomCat[0]?.url ?
@@ -43,14 +43,14 @@ export default class AccountScreen extends Component<AccountProps, AccountState>
         </View>
         <View style={styles.logoutContainer}>
           <Image source={require('../assets/images/cat_angry.png')} style={styles.imgLogout} />
-          <Text style={styles.textLogout}>Log Out</Text>
+          <Text style={styles.textLogout}>{I18n.t('logout')}</Text>
         </View>
         <TouchableOpacity
           style={styles.logout}
           onPress={this.handleLogout.bind(this)}
         >
           <Text>
-            LOGOUT
+            {I18n.t('logout').toUpperCase()}
           </Text>
         </TouchableOpacity>
       </View>

@@ -14,6 +14,7 @@ import {
 import React, { Component } from 'react'
 import CatApiClient, { Breed, BreedDetail } from '../api/CatApiClient';
 import BreedCharacteristic from '../components/BreedCharacteristic';
+import I18n from 'react-native-i18n';
 
 
 interface CatDetailsProps {
@@ -107,21 +108,21 @@ export class CatDetails extends Component<CatDetailsProps, CatDetailsState> {
           <View style={styles.details}>
             <Text style={styles.breedName}>{breed.name}</Text>
             <Text style={styles.breedDescription}>{breed.description}</Text>
-            <Text style={styles.breedOrigin}>Origin: {breed.origin}</Text>
-            <Text style={styles.breedWeight}>Weight: {breed.weight.metric} (kg)</Text>
-            <Text style={styles.breedCharacteristics}>Characteristics</Text>
-            <BreedCharacteristic title='Adaptability' value={breed.adaptability} />
-            <BreedCharacteristic title='Affection level' value={breed.affection_level} />
-            <BreedCharacteristic title='Child friendly' value={breed.child_friendly} />
-            <BreedCharacteristic title='Dog friendly' value={breed.dog_friendly} />
-            <BreedCharacteristic title='Energy' value={breed.energy_level} />
-            <BreedCharacteristic title='Grooming' value={breed.grooming} />
-            <BreedCharacteristic title='Health issues' value={breed.health_issues} />
-            <BreedCharacteristic title='Intelligence' value={breed.intelligence} />
-            <BreedCharacteristic title='Shedding' value={breed.shedding_level} />
-            <BreedCharacteristic title='Social needs' value={breed.social_needs} />
-            <BreedCharacteristic title='Stranger friendly' value={breed.stranger_friendly} />
-            <BreedCharacteristic title='Vocalisation' value={breed.vocalisation} />
+            <Text style={styles.breedOrigin}>{I18n.t('origin')} {breed.origin}</Text>
+            <Text style={styles.breedWeight}>{I18n.t('weight')} {breed.weight.metric} {I18n.t('kg')}</Text>
+            <Text style={styles.breedCharacteristics}>{I18n.t('characteristics')}</Text>
+            <BreedCharacteristic title={I18n.t('adaptability')} value={breed.adaptability} />
+            <BreedCharacteristic title={I18n.t('affectionLevel')} value={breed.affection_level} />
+            <BreedCharacteristic title={I18n.t('childFriendly')}  value={breed.child_friendly} />
+            <BreedCharacteristic title={I18n.t('dogFriendly')}  value={breed.dog_friendly} />
+            <BreedCharacteristic title={I18n.t('energyLevel')}  value={breed.energy_level} />
+            <BreedCharacteristic title={I18n.t('grooming')}  value={breed.grooming} />
+            <BreedCharacteristic title={I18n.t('healthIssues')}  value={breed.health_issues} />
+            <BreedCharacteristic title={I18n.t('intelligence')}  value={breed.intelligence} />
+            <BreedCharacteristic title={I18n.t('sheddingLevel')}  value={breed.shedding_level} />
+            <BreedCharacteristic title={I18n.t('socialNeeds')} value={breed.social_needs} />
+            <BreedCharacteristic title={I18n.t('strangerFriendly')}  value={breed.stranger_friendly} />
+            <BreedCharacteristic title={I18n.t('vocalisation')}  value={breed.vocalisation} />
           </View>
         </ScrollView>
       </SafeAreaView>
