@@ -30,11 +30,11 @@ export default class AccountScreen extends Component<AccountProps, AccountState>
   render() {
     return (
       <View style={styles.container}>
-        <Button
-          title="Get a random image of cats!"
-          color="#DD39AF"
-          onPress={this.onPress.bind(this, 'jpg,png')}
-        />
+        <TouchableOpacity
+        style={styles.button}
+          onPress={this.onPress.bind(this, 'jpg,png')}>
+          <Text style={styles.textButton}>Get a random image of cats!</Text>
+          </TouchableOpacity>
         <View style={styles.imgContainer}>
           {this.state?.randomCat[0]?.url ?
             <Image source={{ uri: this.state.randomCat[0].url }} style={styles.image} />
@@ -82,6 +82,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 20,
+  },
+  button: {
+    backgroundColor: '#DD39AF',
+    padding: 10,
+    alignContent: 'center',
+    justifyContent: 'center',
+  },
+  textButton: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
   },
   text: {
     fontSize: 20,
